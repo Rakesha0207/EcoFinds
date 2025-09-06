@@ -4,11 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import LoginScreen from './screens/LoginScreenFirebase';
-import SignupScreen from './screens/SignupScreenFirebase';
-import ProductFeedScreen from './screens/ProductFeedScreenFirebase';
+import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
+import ProductFeedScreen from './screens/ProductFeedScreen';
 import ProductDetailScreen from './screens/ProductDetailScreen';
-import AddProductScreen from './screens/AddProductScreenFirebase';
+import AddProductScreen from './screens/AddProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
