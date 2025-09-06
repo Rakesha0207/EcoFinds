@@ -32,7 +32,19 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+
+const server = app.listen(PORT, () => {
   console.log(`🚀 EcoFinds API server running on port ${PORT}`);
   console.log(`📱 Health check: http://localhost:${PORT}/api/health`);
+});
+
+// Handle server startup errors (e.g., port already in use)
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`❌ Port ${PORT} is already in use. Please stop any existing server or use a different port.`);
+    console.error(`💡 Try: pkill -f "node.*index.js" or use PORT=3001 npm start`);
+  } else {
+    console.error('❌ Server startup error:', err.message);
+  }
+  process.exit(1);
 });
