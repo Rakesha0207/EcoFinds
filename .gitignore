@@ -123,6 +123,9 @@ firebase-debug.*.log
 service-account-key.json
 firebase-adminsdk-*.json
 
+# Firebase config with real credentials  
+mobile/frontend/config/firebase.js
+
 # Build outputs
 build/
 dist/
